@@ -1,15 +1,18 @@
 import UIKit
 
-class ViewController: UITableViewController {
+class ViewController: UICollectionViewController {
 
-    @IBOutlet var labelTotalImages: UILabel!
+
     var pictures = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Storm Viewer"
         navigationController?.navigationBar.prefersLargeTitles = true
-        
+        fetchImages()
+    }
+    
+    @objc func fetchImages() {
         let fm = FileManager.default
         let path = Bundle.main.resourcePath!
         let items = try! fm.contentsOfDirectory(atPath: path)
@@ -21,28 +24,24 @@ class ViewController: UITableViewController {
             }
         }
         pictures.sort()
-        labelTotalImages.text = "Total of images: \(pictures.count)"
-        labelTotalImages.font = labelTotalImages.font.withSize(20)
+        
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return pictures.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Picture", for: indexPath)
-        let selectedImageNumber = indexPath.row + 1
-        cell.textLabel?.text = "\(selectedImageNumber) - \(pictures[indexPath.row])"
-        cell.textLabel?.font = cell.textLabel?.font.withSize(25)
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Picture", for: indexPath) as? PictureCell else { fatalError() }
+        cell.pictureImageView.image = UIImage(named: pictures[indexPath.item])
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(identifier: "Detail") as? DetailViewController {
-            vc.selectedImage = pictures[indexPath.row]
+            vc.selectedImage = pictures[indexPath.item]
             navigationController?.pushViewController(vc, animated: true)
         }
     }
-    
-}
 
+}

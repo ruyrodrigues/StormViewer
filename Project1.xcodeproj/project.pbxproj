@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE5ACB2526B082B500937230 /* PictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5ACB2426B082B500937230 /* PictureCell.swift */; };
 		CE653BDE2694A457000D04D6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE653BDD2694A457000D04D6 /* DetailViewController.swift */; };
 		CEB6A44A26938A43009850A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6A44926938A43009850A0 /* AppDelegate.swift */; };
 		CEB6A44C26938A43009850A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6A44B26938A43009850A0 /* SceneDelegate.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE5ACB2426B082B500937230 /* PictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCell.swift; sourceTree = "<group>"; };
 		CE653BDD2694A457000D04D6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CEB6A44626938A42009850A0 /* Project1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB6A44926938A43009850A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				CEB6A45726938A44009850A0 /* Info.plist */,
 				CE653BDD2694A457000D04D6 /* DetailViewController.swift */,
 				CEB6A45D26938C4F009850A0 /* Content */,
+				CE5ACB2426B082B500937230 /* PictureCell.swift */,
 			);
 			path = Project1;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 			files = (
 				CEB6A44E26938A43009850A0 /* ViewController.swift in Sources */,
 				CEB6A44A26938A43009850A0 /* AppDelegate.swift in Sources */,
+				CE5ACB2526B082B500937230 /* PictureCell.swift in Sources */,
 				CEB6A44C26938A43009850A0 /* SceneDelegate.swift in Sources */,
 				CE653BDE2694A457000D04D6 /* DetailViewController.swift in Sources */,
 			);
